@@ -28,7 +28,7 @@ export class HelloWorldController {
     return this.service.greetingJson();
   }
 
-  @Path('/user/:name')
+  @Path('/users/:name')
   @GET
   async sayHello(@PathParam('name') name: string): Promise<string> {
     this.logger.info(`Saying hello to ${name}`);

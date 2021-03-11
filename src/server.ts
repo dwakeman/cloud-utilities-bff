@@ -45,9 +45,9 @@ export class ApiServer {
           This means we have an apiContext (context root) that is not "/".  Therefore we need to redirect
           /api-docs to the right endpoint so that it works when URL is '/'
       */
-      this.app.get('/api-docs', (req, res) => { //<-- to redirect to actual api-docs endpoint
-        res.redirect(apiContext+'/api-docs');
-      })
+      // this.app.get('/api-docs', (req, res) => { //<-- to redirect to actual api-docs endpoint
+      //   res.redirect(apiContext+'/api-docs');
+      // })
     }
 
     const apiRouter: express.Router = express.Router();
