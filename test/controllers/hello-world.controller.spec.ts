@@ -7,6 +7,7 @@ import {buildApiServer} from '../helper';
 
 class MockHelloWorldService implements HelloWorldApi {
   greeting = jest.fn().mockName('greeting');
+  greetingJson = jest.fn().mockReturnValue({message: 'testing hello!'}).mockName('greetingJson')
 }
 
 describe('hello-world.controller', () => {

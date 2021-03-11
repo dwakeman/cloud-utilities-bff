@@ -16,4 +16,9 @@ export class HelloWorldService implements HelloWorldApi {
     this.logger.info(`Generating greeting for ${name}`);
     return `Hello, ${name}!`;
   }
+
+  async greetingJson(name: string = 'World'): Promise<{message: string}> {
+    this.logger.info(`Generating greeting for ${name}`);
+    return {message: `Hello, ${name}`};
+  }
 }

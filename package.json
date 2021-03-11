@@ -1,14 +1,14 @@
 {
-  "name": "template-node-typescript",
+  "name": "cloud-utilities-bff",
   "version": "1.0.0",
-  "org": "my-org",
-  "description": "Code pattern for starting a typescript-based microservice",
+  "org": "Eyebeem",
+  "description": "BFF for cloud-utilities application",
   "main": "index.js",
   "config": {
     "protocol": "http",
     "host": "localhost",
-    "port": 3000,
-    "contextRoot": ""
+    "port": 3001,
+    "contextRoot": "/api"
   },
   "pact": {
     "providerBaseUrl": "",
@@ -83,6 +83,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ibm-garage-cloud/template-node-typescript.git"
+    "url": "https://github.com/dwakeman/cloud-utilities-bff.git"
   }
 }
