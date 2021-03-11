@@ -47,11 +47,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /api
+              path: /
               port: http
           readinessProbe:
             httpGet:
-              path: /api
+              path: /
               port: http
           env:
             - name: IMAGE_NAME
