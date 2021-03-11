@@ -38,11 +38,11 @@ describe('hello-world.controller', () => {
     });
 
     test('should return "Hello, World!"', done => {
-      request(app).get('/api/hello').expect(200).expect(expectedResponse, done);
+      request(app).get('/hello').expect(200).expect(expectedResponse, done);
     });
   });
 
-  describe('Given /api/hello/users/Johnny', () => {
+  describe('Given /hello/users/Johnny', () => {
     const name = 'Johnny';
 
     beforeEach(() => {
@@ -50,7 +50,7 @@ describe('hello-world.controller', () => {
     });
 
     test('should return "Hello, Johnny!"', done => {
-      request(app).get(`/api/hello/users/${name}`).expect(200).expect(name, done);
+      request(app).get(`/hello/users/${name}`).expect(200).expect(name, done);
     });
   });
 

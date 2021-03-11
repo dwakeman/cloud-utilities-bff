@@ -17,13 +17,13 @@ describe('health.controller', () => {
     expect(true).toBe(true);
   });
 
-  describe('Given /api/health', () => {
+  describe('Given /health', () => {
     test('should return 200 status', () => {
-      return request(app).get('/api/health').expect(200);
+      return request(app).get('/health').expect(200);
     });
 
     test('should return {status: "UP:}', () => {
-      return request(app).get('/api/health').expect({status: 'UP'});
+      return request(app).get('/health').expect({status: 'UP'});
     });
   });
 

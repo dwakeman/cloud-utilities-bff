@@ -17,7 +17,7 @@ const config = npmPackage.config || {
   protocol: 'http',
   host: 'localhost',
   port: 3000,
-  'contextRoot': '/api'
+  'contextRoot': '/'
 };
 const configApiContext = config['contextRoot'];
 
@@ -40,15 +40,7 @@ export class ApiServer {
     if (!apiContext || apiContext === '/') {
       this.app.use(express.static(path.join(process.cwd(), 'public'), { maxAge: 31557600000 }));
     } else {
-      /* 
-          This means we have an apiContext (context root) that is not "/".  Therefore we need to redirect
-          /api-docs to the right endpoint so that it works when URL is '/'
-      */
-      // this.app.get('/api-docs', (req, res) => { //<-- to redirect to actual api-docs endpoint
-      //   res.redirect(apiContext+'/api-docs');
-      // })
       this.app.use(apiContext, express.static(path.join(process.cwd(), 'public'), { maxAge: 31557600000 }));
-
     }
 
     const apiRouter: express.Router = express.Router();
