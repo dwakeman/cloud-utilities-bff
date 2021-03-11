@@ -21,14 +21,14 @@ export class HelloWorldController {
     return this.service.greeting();
   }
 
-  @Path('/json') //<-- full path ends up being '/hello/json'.  actually, it doesn't!  It things json is a name parameter.
+  @Path('/json') //<-- full path ends up being '/hello/json'. 
   @GET
   async sayHelloWithJson(): Promise<{message: string}> {
     this.logger.info('Saying hello to someone using JSON payload');
     return this.service.greetingJson();
   }
 
-  @Path('/users/:name')
+  @Path('/users/:name') //<-- full path ends up being '/hello/users/Dave'.
   @GET
   async sayHello(@PathParam('name') name: string): Promise<string> {
     this.logger.info(`Saying hello to ${name}`);
