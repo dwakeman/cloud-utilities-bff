@@ -8,7 +8,7 @@ export type TokenResponse = {
 }
 
 export abstract class IamIdentityApi {
-  abstract getAuthToken(apikey: string): Promise<TokenResponse>;
+  abstract getAuthToken(apikey: string): Promise<TokenResponse | {error: any}>;
   
 
 }
