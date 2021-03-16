@@ -47,7 +47,7 @@ export class ApiServer {
     Server.loadServices(
       apiRouter,
       [
-        'controllers/*',
+        'controllers/',
       ],
       __dirname,
     );

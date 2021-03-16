@@ -1,7 +1,7 @@
 import { Container } from "typescript-ioc";
 
-export * from './hello-world.api';
-export * from './hello-world.service';
+export * from './iam-identity.api';
+export * from './iam-identity.service';
 
 import config from './ioc.config';
 

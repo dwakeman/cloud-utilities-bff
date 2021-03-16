@@ -1,5 +1,5 @@
 import { ApiServer } from './server';
-import {workerManager} from './workers';
+//import {workerManager} from './workers';
 
 export const start = async (): Promise<void> => {
   return new Promise<void>((resolve, reject) => {
@@ -7,7 +7,7 @@ export const start = async (): Promise<void> => {
 
     Promise.all([
       apiServer.start(),
-      workerManager.start(),
+      //workerManager.start(),
     ]).then(() => resolve())
       .catch(reject);
 
@@ -15,7 +15,7 @@ export const start = async (): Promise<void> => {
     const graceful = () => {
       Promise.all([
         apiServer.stop(),
-        workerManager.stop(),
+        //workerManager.stop(),
       ]).then(() => process.exit(0));
     };
 

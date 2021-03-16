@@ -1,7 +1,7 @@
 import {GET, Path, PathParam} from 'typescript-rest';
 import {Inject} from 'typescript-ioc';
-import {IbmResourcesApi, ResourceInstancesList, ResourceInstance} from '../services';
-import {LoggerApi} from '../logger';
+import {IbmResourcesApi, ResourceInstancesList, ResourceInstance} from '../../../services/ibm/ResourceController';
+import {LoggerApi} from '../../../logger';
 
 @Path('/resources')
 export class IbmResourcesController {
