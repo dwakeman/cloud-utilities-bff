@@ -35,7 +35,7 @@ export class IamIdentityService implements IamIdentityApi {
         .catch(err => {
           console.log('[iam-identity.service.ts] getAuthToken failed!');
           console.log('The error is: ' + JSON.stringify(err.response.data));
-          console.log('getting ready to reject the promise.....');
+          //console.log('getting ready to reject the promise.....');
           resolve({error: err.response.data});
         })
 

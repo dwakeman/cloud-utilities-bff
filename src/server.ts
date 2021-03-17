@@ -6,7 +6,7 @@ import {AddressInfo} from 'net';
 import * as npmPackage from '../package.json';
 import {parseCsvString} from './util/string-util';
 import {LoggerApi} from './logger';
-import {TracerApi} from './tracer';
+//import {TracerApi} from './tracer';
 import {opentracingMiddleware} from './util/opentracing/express-middleware';
 import fs = require('fs');
 import http = require('http');
@@ -24,8 +24,8 @@ const configApiContext = config['contextRoot'];
 export class ApiServer {
   @Inject
   logger: LoggerApi;
-  @Inject
-  tracer: TracerApi;
+  // @Inject
+  // tracer: TracerApi;
 
   // private readonly app: express.Application;
   private server: http.Server = null;
@@ -33,7 +33,7 @@ export class ApiServer {
 
   constructor(private readonly app: express.Application = express(), apiContext = configApiContext) {
 
-    this.app.use(opentracingMiddleware({tracer: this.tracer}));
+    // this.app.use(opentracingMiddleware({tracer: this.tracer}));
     this.logger.apply(this.app);
     this.app.use(cors());
 
@@ -101,6 +101,7 @@ export class ApiServer {
     return new Promise<boolean>(resolve => {
       if (this.server) {
         this.server.close(() => {
+          console.log('stopping server.....');
           return resolve(true);
         });
       } else {
